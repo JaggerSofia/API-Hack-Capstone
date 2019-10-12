@@ -9,8 +9,20 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!--The title is the only thing that I have made a change to, and this will change as 
-    we work through the project. -->
+    <div class='conatiner'>
+        <form id='trail-search'>
+            <label for="trail-local">Trails </label>
+            <input type="text" name='trails' id='trail-param'>
+            <input type='submit' value='Search'>
+        </form>
+    </div>
+
+    <section id='trails' class='hidden'>
+        <h2>Trails near this location</h2>
+        <ul id='trail-list'>
+        </ul>
+    </section>
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="script.js"></script>
 </body>
