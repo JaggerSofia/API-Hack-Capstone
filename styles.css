@@ -19,10 +19,3 @@ button:hover {
     display: none;
 }
 
-.gray {
-    background: lightgray;
-    border: 1px solid gray;
-    text-align: center;
-    box-align: center;
-    padding: 20px;
-}
