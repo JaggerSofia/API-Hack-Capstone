@@ -3,21 +3,22 @@ hikingKey = "200616177-251562ab104a6def31b38b058d4acf3a";
 mapsKey = "AIzaSyB4NifjFp63z2lo8oXCaggg5Yrme4z5b_A";
 mapsUrl = "https://maps.googleapis.com/maps/api/geocode/json"
 weatherUrl = "api.openweathermap.org/data/2.5/forecast?"
-hikingUrl = ""
+hikingUrl = "https://www.hikingproject.com/data/get-trails"
 
 
 
 
-function displayResults(responseJson) {
+function displayResults(trailsJson) {
     $("#results-list").empty();
 
-    console.log(responseJson);
-    for(let i=0; i<responseJson.data.length; i++) {
+    console.log("displaying", trailsJson);
+
+    for(let i=0; i<trailsJson.trails.length; i++) {
         $("#results-list").append(
             `<li>
-            <h3>${responseJson.data[i].fullName}</h3>
-            <p>${responseJson.data[i].description}</p>
-            <a href="${responseJson.data[i].url}"> ${responseJson.data[i].url}</a>
+            <h3>${trailsJson.trails[i].name}</h3>
+            <img src="${trailsJson.trails[i].imgSmallMed}">
+            <p>${trailsJson.trails[i].summary}</p>
             </li>
             `
         )
@@ -25,6 +26,35 @@ function displayResults(responseJson) {
     $("#results").removeClass("hidden");
 
 }
+
+function getTrails(mapsJson) {
+    console.log("maps data", mapsJson);
+
+    const params= {
+        lat: `${mapsJson.results[0].geometry.location.lat}`,
+        lon: `${mapsJson.results[0].geometry.location.lng}`,
+        key: hikingKey,
+    };
+
+    console.log(`${mapsJson.results[0].geometry.location.lat}`);
+
+    let queryString = $.param(params);
+    console.log(queryString);
+    const url = hikingUrl + "?" + queryString;
+    console.log(url);
+
+    fetch(url)
+        .then(response => {
+            if(response.ok) {
+                return response.json();
+            }
+            throw new Error(response.statusText);
+        }).then(trailsJson=>displayResults(trailsJson))
+        .catch(err => {
+            $("#js-error-message").text(`Something failed: ${err.message}`);
+        });
+}
+
 
 
 function getLocation(searchTerm) {
@@ -44,7 +74,7 @@ function getLocation(searchTerm) {
                 return response.json();
             }
             throw new Error(response.statusText);
-        }).then(responseJson=>displayResults(responseJson))
+        }).then(mapsJson=>getTrails(mapsJson))
         .catch(err => {
             $("#js-error-message").text(`Something failed: ${err.message}`);
         });
