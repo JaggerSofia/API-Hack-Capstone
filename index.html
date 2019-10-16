@@ -9,8 +9,27 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!--The title is the only thing that I have made a change to, and this will change as 
-    we work through the project. -->
+    <div class="container">
+     <form id="js-form">
+      <label for="search-term">Search: </label>
+          <input type="text" name="search-term" id="search-term">
+
+          <input type="submit" value="Find">
+     </form>
+    
+      <p id="js-error-message" class="error-message"></p>
+    
+      <section id="results" class="hidden">
+        <h2>Search Results</h2>
+        <ul id="results-list"></ul>
+      </section>
+
+      <section id="results-page" class="hidden">
+          
+      </section>
+
+    </div>
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="script.js"></script>
 </body>
