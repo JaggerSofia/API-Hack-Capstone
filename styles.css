@@ -18,3 +18,11 @@ button:hover {
 .hidden {
     display: none;
 }
+
+.gray {
+    background: gray;
+    border: 1px solid darkgray;
+    text-align: center;
+    align: center;
+    padding: 20px;
+}
