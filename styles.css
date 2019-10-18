@@ -8,6 +8,14 @@
     src: url('fonts/Domine-Regular.ttf')
 }
 
+header, h1, h2, h3, .domine-font{
+    font-family: 'Domine';
+}
+
+p, .roboto-font {
+    font-family: 'Roboto';
+}
+
 .container {
     max-width: 800px;
     margin: 0 auto;
