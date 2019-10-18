@@ -21,7 +21,9 @@ function displayResults(trailsJson) {
             `<div class='result-page'>
                 <li>
                 <h3 class='domine-font'>${trailsJson.trails[i].name}</h3>
-                <img src="${trailsJson.trails[i].imgSmallMed}">
+                <div class='trail-img'>
+                    <img src="${trailsJson.trails[i].imgSmallMed}">
+                </div>
                 <p class='roboto-font'>${trailsJson.trails[i].summary}</p>
                 </li>
             </div>`
