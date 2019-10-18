@@ -69,6 +69,14 @@ label {
     background: rgba(255, 255, 255, 0.7)
 }
 
+h3, p {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 1 1;
+}
+
 input[type='text'] {
     padding: 10px 20px;
     margin-top: 10px;
@@ -154,6 +162,14 @@ input[type='submit'] {
         margin: 20px;
         background: rgba(255, 255, 255, 0.7)
     }
+
+    h3, p {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        flex: 1 1;
+    }
 }
 
 @media screen and (min-width: 1600px) {
@@ -209,4 +225,12 @@ input[type='submit'] {
         margin: 20px;
         background: rgba(255, 255, 255, 0.7)
     }
+
+    h3, p {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        flex: 1 1;
+    }    
 }
