@@ -16,23 +16,6 @@ p, .roboto-font {
     font-family: 'Roboto';
 }
 
-.container {
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-button, input[type='text'] {
-    padding: 5px;
-}
-
-button:hover {
-    cursor: pointer;
-}
-
-.hidden {
-    display: none;
-}
-
 body {
     background: url('./images/mount-rainier.jpg') no-repeat center center fixed;
     -webkit-background-size: cover;
@@ -40,4 +23,190 @@ body {
     -o-background-size: cover;
     background-size: cover;
     background-color: 262626;
+}
+
+header {
+    margin-top: 30px;
+    height: 100px;
+    margin-bottom: 30px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1 1;
+}
+
+form {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex: 1 1;
+}
+
+label {
+    padding: 10px 20px;
+    margin-top: 10px;
+    height: auto;
+    font-size: 20px;
+    font-weight: 500;
+    text-align: center;
+    border: 0;
+    margin-bottom: 0;
+}
+
+.result-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 1 1;
+}
+
+.result-page {
+    width: 75%;
+    padding: 40px;
+    margin: 20px;
+    background: rgba(255, 255, 255, 0.7)
+}
+
+input[type='text'] {
+    padding: 10px 20px;
+    margin-top: 10px;
+    height: auto;
+    font-size: 20px;
+    font-weight: 500;
+    text-align: center;
+    background:white ;
+    border: 0;
+    cursor: pointer;
+    margin-bottom: 0;
+    border-radius: 3px;
+}
+
+input[type='submit'] {
+    padding: 10px 20px;
+    margin-top: 10px;
+    height: auto;
+    font-size: 20px;
+    font-weight: 500;
+    text-align: center;
+    background-color: rgb(122, 145, 125);
+    border: 0;
+    cursor: pointer;
+    margin-bottom: 0;
+    border-radius: 3px;
+}
+
+.hidden {
+    display: none;
+}
+
+@media screen and (min-width: 320px) {
+    body {
+        background: url('./images/mount-rainier.jpg') no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        background-color: 262626;
+    }
+    
+    header {
+        margin-top: 30px;
+        height: 100px;
+        margin-bottom: 30px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        flex: 1 1;
+    }
+    
+    form {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        flex: 1 1;
+    }
+    
+    label {
+        padding: 10px 20px;
+        margin-top: 10px;
+        height: auto;
+        font-size: 20px;
+        font-weight: 500;
+        text-align: center;
+        border: 0;
+        margin-bottom: 0;
+    }
+    
+    .result-section {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        flex: 1 1;
+    }
+    
+    .result-page {
+        width: 75%;
+        padding: 40px;
+        margin: 20px;
+        background: rgba(255, 255, 255, 0.7)
+    }
+}
+
+@media screen and (min-width: 1600px) {
+    body {
+        background: url('./images/mount-rainier.jpg') no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        background-color: 262626;
+    }
+    
+    header {
+        margin-top: 30px;
+        height: 100px;
+        margin-bottom: 30px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        flex: 1 1;
+    }
+    
+    form {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        flex: 1 1;
+    }
+    
+    label {
+        padding: 10px 20px;
+        margin-top: 10px;
+        height: auto;
+        font-size: 20px;
+        font-weight: 500;
+        text-align: center;
+        border: 0;
+        margin-bottom: 0;
+    }
+    
+    .result-section {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        flex: 1 1;
+    }
+    
+    .result-page {
+        width: 75%;
+        padding: 40px;
+        margin: 20px;
+        background: rgba(255, 255, 255, 0.7)
+    }
 }
