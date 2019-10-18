@@ -18,11 +18,13 @@ function displayResults(trailsJson) {
 
     for(let i=0; i<trailsJson.trails.length; i++) {
         $("#results-list").append(
-            `<li>
-            <h3 class='domine-font'>${trailsJson.trails[i].name}</h3>
-            <img src="${trailsJson.trails[i].imgSmallMed}">
-            <p class='roboto-font'>${trailsJson.trails[i].summary}</p>
-            </li>`
+            `<div class='result-page'>
+                <li>
+                <h3 class='domine-font'>${trailsJson.trails[i].name}</h3>
+                <img src="${trailsJson.trails[i].imgSmallMed}">
+                <p class='roboto-font'>${trailsJson.trails[i].summary}</p>
+                </li>
+            </div>`
         )
     }
     $("#results").removeClass("hidden");
