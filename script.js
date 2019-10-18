@@ -1,11 +1,12 @@
-weatherKey = '273aa1cbe2cd87586632673b6637c0de';
-weatherUrl ='api.openweathermap.org/data/2.5/forecast?'
+'use strict'
+const weatherKey = '273aa1cbe2cd87586632673b6637c0de';
+const weatherUrl ='api.openweathermap.org/data/2.5/forecast'
 // weatherKey = "882c100e357f5ad81cfdce3b65036425";
-hikingKey = "200616177-251562ab104a6def31b38b058d4acf3a";
-mapsKey = "AIzaSyB4NifjFp63z2lo8oXCaggg5Yrme4z5b_A";
-mapsUrl = "https://maps.googleapis.com/maps/api/geocode/json"
+const hikingKey = "200616177-251562ab104a6def31b38b058d4acf3a";
+const mapsKey = "AIzaSyB4NifjFp63z2lo8oXCaggg5Yrme4z5b_A";
+const mapsUrl = "https://maps.googleapis.com/maps/api/geocode/json"
 // weatherUrl = "api.openweathermap.org/data/2.5/forecast?"
-hikingUrl = "https://www.hikingproject.com/data/get-trails"
+const hikingUrl = "https://www.hikingproject.com/data/get-trails"
 
 
 
@@ -71,6 +72,7 @@ function getTrails(mapsJson) {
 }
 
 function getWeather(weatherJson) {
+    console.log(getWeather);
     const params = {
         lat: `${mapsJson.results[0].geometry.location.lat}`,
         lon: `${mapsJson.results[0].geometry.location.lng}`,
