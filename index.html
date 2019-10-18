@@ -9,20 +9,27 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class='conatiner gray'>
-        <h1 class='gray'>Project Title</h1>
-        <form id='trail-search' class='gray'>
-            <label for="trail-local">Trails </label>
-            <input type="text" name='trails' id='trail-param'>
-            <input type='submit' value='Search'>
-        </form>
-    </div>
+    <div class="container">
+     <form id="js-form">
+      <label for="search-term">Search: </label>
+          <input type="text" name="search-term" id="search-term">
 
-    <section id='trails' class='results hidden'>
-        <h2>Trails near this location</h2>
-        <ul id='trail-list'>
-        </ul>
-    </section>
+          <input type="submit" value="Find">
+     </form>
+    
+      <p id="js-error-message" class="error-message"></p>
+    
+      <section id="results" class="hidden">
+        <h2>Search Results</h2>
+        <ul id="results-list"></ul>
+        <ul id='weather-list'></ul>
+      </section>
+
+      <section id="results-page" class="hidden">
+          
+      </section>
+
+    </div>
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="script.js"></script>
