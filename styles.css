@@ -16,6 +16,10 @@ p, .roboto-font {
     font-family: 'Roboto';
 }
 
+ul {
+    list-style-type: none;
+}
+
 body {
     background: url('./images/mount-rainier.jpg') no-repeat center center fixed;
     -webkit-background-size: cover;
@@ -72,6 +76,14 @@ label {
 h3, p {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 1 1;
+}
+
+.trail-img {
+    display: flex;
+    flex-direction:column;
     justify-content: center;
     align-items: center;
     flex: 1 1;
@@ -170,6 +182,14 @@ input[type='submit'] {
         align-items: center;
         flex: 1 1;
     }
+
+    .trail-img {
+        display: flex;
+        flex-direction:column;
+        justify-content: center;
+        align-items: center;
+        flex: 1 1;
+    }
 }
 
 @media screen and (min-width: 1600px) {
@@ -233,4 +253,12 @@ input[type='submit'] {
         align-items: center;
         flex: 1 1;
     }    
+
+    .trail-img {
+        display: flex;
+        flex-direction:column;
+        justify-content: center;
+        align-items: center;
+        flex: 1 1;
+    }
 }
