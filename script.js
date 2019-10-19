@@ -24,7 +24,7 @@ function displayResults(trailsJson, mapsJson) {
                 <h3 class='domine-font'>${trailsJson.trails[i].name}</h3>
                 <div class="trail-detail">
                     <div class='trail-img'>
-                        <img src="${trailsJson.trails[i].imgMedium}" class='image-size'>
+                        <img src="${trailsJson.trails[i].imgSmallMed}" class='image-size'>
                     </div>
                     <div class='details-list'>
                         <p class='roboto-font'>${trailsJson.trails[i].summary}</p> 
@@ -100,7 +100,10 @@ function getLocation(searchTerm) {
             $("#js-error-message").text(`Location failed: ${err.message}`);
         });
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> bf8b44324864a5fb4beaf106808be2b119166383
 
 
 // Watches submit button via event listener to get input data
@@ -115,8 +118,10 @@ function watchForm() {
             alert("Please enter a location");
         }
     })
-
 }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> bf8b44324864a5fb4beaf106808be2b119166383
 $(watchForm)
