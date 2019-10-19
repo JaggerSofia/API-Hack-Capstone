@@ -1,6 +1,6 @@
 This app is called Trail Finder
 
-https://jaggersofia.github.io/trail-finder/
+https://jaggersofia.github.io/Trail-Finder/
 
 <img src='images/main-screen.png' alt='main screen'>
 <img src='images/small-result-screen.png' alt='small result screen'>
