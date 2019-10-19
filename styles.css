@@ -27,3 +27,12 @@ button:hover{
 li {
     list-style: none;
 }
+
+.details-list {
+    display: flex;
+    flex-direction: row;
+}
+
+.details-list p {
+    margin-right: 5px;
+}

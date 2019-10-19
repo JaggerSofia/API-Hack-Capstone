@@ -8,10 +8,10 @@ hikingUrl = "https://www.hikingproject.com/data/get-trails"
 
 
 
-function displayResults(trailsJson) {
+function displayResults(trailsJson, mapsJson) {
     $("#results-list").empty();
 
-    console.log("displaying", trailsJson);
+    console.log("displaying", trailsJson, mapsJson);
 
     for(let i=0; i<trailsJson.trails.length; i++) {
         $("#results-list").append(
@@ -19,13 +19,36 @@ function displayResults(trailsJson) {
             <h3>${trailsJson.trails[i].name}</h3>
             <img src="${trailsJson.trails[i].imgSmallMed}">
             <p>${trailsJson.trails[i].summary}</p>
+
+            <div class="details-list"> 
+                <p>Ascent: ${trailsJson.trails[i].ascent}</p>
+                <p>Difficulty: ${trailsJson.trails[i].difficulty}</p>
+                <p>Length: ${trailsJson.trails[i].length} miles</p>
+                <p>Location: ${trailsJson.trails[i].location}</p>
+            </div>
+
+            <img src="https://maps.googleapis.com/maps/api/staticmap?markers=${trailsJson.trails[i].latitude},${trailsJson.trails[i].longitude}|${mapsJson.results[0].geometry.location.lat},${mapsJson.results[0].geometry.location.lng}&size=700x300&key=AIzaSyB4NifjFp63z2lo8oXCaggg5Yrme4z5b_A">
+
+            <div class="navi-details">
+
+            </div>
+            
             </li>
             `
         )
     }
     $("#results").removeClass("hidden");
 
+
 }
+
+function getDistance(mapsJson) {
+    console.log("getDistance", mapsJson);
+
+}
+
+
+
 
 function getTrails(mapsJson) {
     console.log("maps data", mapsJson);
@@ -33,6 +56,8 @@ function getTrails(mapsJson) {
     const params= {
         lat: `${mapsJson.results[0].geometry.location.lat}`,
         lon: `${mapsJson.results[0].geometry.location.lng}`,
+        maxResults: `20`,
+        maxDistance: `10`,
         key: hikingKey,
     };
 
@@ -49,10 +74,12 @@ function getTrails(mapsJson) {
                 return response.json();
             }
             throw new Error(response.statusText);
-        }).then(trailsJson=>displayResults(trailsJson))
+        }).then(trailsJson=>displayResults(trailsJson, mapsJson))
         .catch(err => {
             $("#js-error-message").text(`Something failed: ${err.message}`);
         });
+
+    getDistance(mapsJson);
 }
 
 
@@ -78,6 +105,7 @@ function getLocation(searchTerm) {
         .catch(err => {
             $("#js-error-message").text(`Something failed: ${err.message}`);
         });
+
 }
 
 
