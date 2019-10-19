@@ -99,7 +99,7 @@ function getLocation(searchTerm) {
         .catch(err => {
             $("#js-error-message").text(`Location failed: ${err.message}`);
         });
-
+}
 
 
 // Watches submit button via event listener to get input data
