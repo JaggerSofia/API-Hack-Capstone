@@ -8,10 +8,9 @@ hikingUrl = "https://www.hikingproject.com/data/get-trails"
 
 
 
+// displays all information
 function displayResults(trailsJson, mapsJson) {
     $("#results-list").empty();
-
-    console.log("displaying", trailsJson, mapsJson);
 
     for(let i=0; i<trailsJson.trails.length; i++) {
         $("#results-list").append(
@@ -27,7 +26,7 @@ function displayResults(trailsJson, mapsJson) {
                 <p>Location: ${trailsJson.trails[i].location}</p>
             </div>
 
-            <img src="https://maps.googleapis.com/maps/api/staticmap?markers=${trailsJson.trails[i].latitude},${trailsJson.trails[i].longitude}|${mapsJson.results[0].geometry.location.lat},${mapsJson.results[0].geometry.location.lng}&size=700x300&key=AIzaSyB4NifjFp63z2lo8oXCaggg5Yrme4z5b_A">
+            <img src="https://maps.googleapis.com/maps/api/staticmap?markers=label:B%7C${trailsJson.trails[i].latitude},${trailsJson.trails[i].longitude}&markers=label:A%7C${mapsJson.results[0].geometry.location.lat},${mapsJson.results[0].geometry.location.lng}&size=700x300&key=AIzaSyB4NifjFp63z2lo8oXCaggg5Yrme4z5b_A">
 
             </li>
             `
@@ -38,10 +37,10 @@ function displayResults(trailsJson, mapsJson) {
 }
 
 
-
+// Fetches a json of all trails nearby provided location
 function getTrails(mapsJson) {
-    console.log("maps data", mapsJson);
 
+    // parameters for hiking project api
     const params= {
         lat: `${mapsJson.results[0].geometry.location.lat}`,
         lon: `${mapsJson.results[0].geometry.location.lng}`,
@@ -50,13 +49,11 @@ function getTrails(mapsJson) {
         key: hikingKey,
     };
 
-    console.log(`${mapsJson.results[0].geometry.location.lat}`);
-
+    // creates url for hiking project api
     let queryString = $.param(params);
-    console.log(queryString);
     const url = hikingUrl + "?" + queryString;
-    console.log(url);
 
+    // fetches json using the url created
     fetch(url)
         .then(response => {
             if(response.ok) {
@@ -65,23 +62,26 @@ function getTrails(mapsJson) {
             throw new Error(response.statusText);
         }).then(trailsJson=>displayResults(trailsJson, mapsJson))
         .catch(err => {
-            $("#js-error-message").text(`Something failed: ${err.message}`);
+            $("#js-error-message").text(`Trails failed: ${err.message}`);
         });
 }
 
 
-
+// Gets the location json(google maps api) using the searchTerm as an address
 function getLocation(searchTerm) {
-    console.log("Formdata", searchTerm);
+
+    // parameters for google maps api
     const params= {
         address: searchTerm,
         key: mapsKey,
     };
 
+    // creates url for google maps json
     let queryString = $.param(params);
-    console.log(queryString);
     const url = mapsUrl + "?" + queryString;
 
+
+    // fetches the json using the url created
     fetch(url)
         .then(response=> {
             if(response.ok) {
@@ -90,12 +90,12 @@ function getLocation(searchTerm) {
             throw new Error(response.statusText);
         }).then(mapsJson=>getTrails(mapsJson))
         .catch(err => {
-            $("#js-error-message").text(`Something failed: ${err.message}`);
+            $("#js-error-message").text(`Location failed: ${err.message}`);
         });
 
 }
 
-
+// Watches submit button via event listener to get input data
 function watchForm() {
     $('form').submit(event => {
         event.preventDefault();
