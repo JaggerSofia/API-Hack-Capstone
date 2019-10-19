@@ -92,7 +92,7 @@ label {
     background: rgba(255, 255, 255, 0.8);
     border-radius: 3px;
     max-width: 90%;
-
+}
 
 h3, p {
     display: flex;
@@ -150,7 +150,6 @@ input[type='submit'] {
     display: none;
 }
 
-
 .image-size {
     width: 90%;
     max-width: 250px;
@@ -159,13 +158,13 @@ input[type='submit'] {
     background-color: black;
 }
 
-
 .map-size {
     width: 90%;
     max-width: 300px;
     padding: 5px;
     border-radius: 3px;
     background-color: rgb(122, 145, 125);
+    margin-bottom: 10px;
 }
 
 .container {

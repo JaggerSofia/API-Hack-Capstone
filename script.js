@@ -100,10 +100,6 @@ function getLocation(searchTerm) {
             $("#js-error-message").text(`Location failed: ${err.message}`);
         });
 }
-<<<<<<< HEAD
-
-=======
->>>>>>> bf8b44324864a5fb4beaf106808be2b119166383
 
 
 // Watches submit button via event listener to get input data
@@ -120,8 +116,4 @@ function watchForm() {
     })
 }
 
-<<<<<<< HEAD
-
-=======
->>>>>>> bf8b44324864a5fb4beaf106808be2b119166383
 $(watchForm)
