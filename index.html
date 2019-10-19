@@ -13,13 +13,15 @@
         <header>
             <h1>Trail Finder</h1>
             <h2>Search hiking trails by location</h2>
+            
+            <form id="js-form">
+                <label for="search-term" class='domine-font'>Search: </label>
+                <input type="text" name="search-term" id="search-term" placeholder='Seattle, WA' class='roboto-font'>
+    
+                <input type="submit" value="Find" class='roboto-font'>
+            </form>
         </header>
-        <form id="js-form">
-            <label for="search-term" class='domine-font'>Search: </label>
-            <input type="text" name="search-term" id="search-term" placeholder='Seattle, WA' class='roboto-font'>
-
-            <input type="submit" value="Find" class='roboto-font'>
-        </form>
+        
     
         <p id="js-error-message" class="error-message roboto-font"></p>
     
