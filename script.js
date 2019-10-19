@@ -1,3 +1,4 @@
+
 'use strict'
 const weatherKey = '273aa1cbe2cd87586632673b6637c0de';
 const weatherUrl ='api.openweathermap.org/data/2.5/forecast'
@@ -9,8 +10,6 @@ const mapsUrl = "https://maps.googleapis.com/maps/api/geocode/json"
 const hikingUrl = "https://www.hikingproject.com/data/get-trails"
 const myHikingKey = '200616064-e1179b9f85f40484fd23132602b1b789'
 const trailConditions = 'https://www.hikingproject.com/data/get-conditions'
-
-
 
 
 function displayResults(trailsJson) {
@@ -33,21 +32,6 @@ function displayResults(trailsJson) {
     }
     $("#results").removeClass("hidden");
 }
-
-// function displayWeather(forcastJson) {
-//     $('#weather-list').empty();
-
-//     console.log('displaying', forcastJson);
-
-//     for (let i=0; i<forcastJson.forcast.length; i++) {
-//         $('#weather-list').append(
-//             `<li>
-//             <p>${forcastJson.forcast[i].temp}</p>
-//             <p>${forcastJson.forcast[i].temp_min}</p>
-//             </li>`
-//         )
-//     }
-// }
 
 function getTrails(mapsJson) {
     console.log("maps data", mapsJson);
@@ -77,33 +61,9 @@ function getTrails(mapsJson) {
         });
 }
 
-// function getWeather(weatherJson) {
-//     console.log(getWeather);
-//     const params = {
-//         lat: `${mapsJson.results[0].geometry.location.lat}`,
-//         lon: `${mapsJson.results[0].geometry.location.lng}`,
-//     }
-    
-//     let queryString = $.param(params);
-//     console.log(queryString);
-//     const url = weatherUrl + '?' + queryString;
-
-//     fetch(url)
-//         .then(response => {
-//             if(response.ok) {
-//                 return response.json();
-//             }
-//             throw new Error(response.statusText);
-//         }).then(weatherJson=>displayWeather(weatherJson))
-//         .catch(err => {
-//             $('#js-error-message').text(`Something failed: ${err.message}`);
-//         })
-
-// }
-
 function getLocation(searchTerm) {
     console.log("Formdata", searchTerm);
-    const params = {
+    const params= {
         address: searchTerm,
         key: mapsKey,
     };
@@ -137,6 +97,4 @@ function watchForm() {
     })
 
 }
-
-
 $(watchForm)
