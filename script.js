@@ -7,6 +7,8 @@ const mapsKey = "AIzaSyB4NifjFp63z2lo8oXCaggg5Yrme4z5b_A";
 const mapsUrl = "https://maps.googleapis.com/maps/api/geocode/json"
 // weatherUrl = "api.openweathermap.org/data/2.5/forecast?"
 const hikingUrl = "https://www.hikingproject.com/data/get-trails"
+const myHikingKey = '200616064-e1179b9f85f40484fd23132602b1b789'
+const trailConditions = 'https://www.hikingproject.com/data/get-conditions'
 
 
 
