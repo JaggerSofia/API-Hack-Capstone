@@ -4,26 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Capstone 1</title>
+    <title>Trail Finder</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
-     <form id="js-form">
-      <label for="search-term">Search: </label>
-          <input type="text" name="search-term" id="search-term">
+        <header>
+            <h1>Trail Finder</h1>
+            <h2>Search hiking trails by location</h2>
+        </header>
+        <form id="js-form">
+            <label for="search-term" class='domine-font'>Search: </label>
+            <input type="text" name="search-term" id="search-term" placeholder='Seattle, WA' class='roboto-font'>
 
-          <input type="submit" value="Find">
-     </form>
+            <input type="submit" value="Find" class='roboto-font'>
+        </form>
     
-      <p id="js-error-message" class="error-message"></p>
+        <p id="js-error-message" class="error-message roboto-font"></p>
     
-      <section id="results" class="hidden">
-        <h2>Search Results</h2>
-        <ul id="results-list"></ul>
-
-
+        <div class='result-section'>
+            <section id="results" class="hidden">
+                    <ul id="results-list"></ul>
+            </section>
+        </div>
     </div>
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
