@@ -12,7 +12,7 @@ const myHikingKey = '200616064-e1179b9f85f40484fd23132602b1b789'
 const trailConditions = 'https://www.hikingproject.com/data/get-conditions'
 
 
-function displayResults(trailsJson) {
+function displayResults(trailsJson, mapsJson) {
     $("#results-list").empty();
 
     console.log("displaying", trailsJson);
@@ -22,10 +22,20 @@ function displayResults(trailsJson) {
             `<div class='result-page'>
                 <li>
                 <h3 class='domine-font'>${trailsJson.trails[i].name}</h3>
-                <div class='trail-img'>
-                    <img src="${trailsJson.trails[i].imgSmallMed}">
+                <div class="trail-detail">
+                    <div class='trail-img'>
+                        <img src="${trailsJson.trails[i].imgMedium}" class='image-size'>
+                    </div>
+                    <div class='details-list'>
+                        <p class='roboto-font'>${trailsJson.trails[i].summary}</p> 
+                        <p class='roboto-font'>Ascent: ${trailsJson.trails[i].ascent} ft</p>
+                        <p class='roboto-font'>Length: ${trailsJson.trails[i].length} miles</p>
+                        <p class='roboto-font'>Location: ${trailsJson.trails[i].location}</p>
+                    </div>
                 </div>
-                <p class='roboto-font'>${trailsJson.trails[i].summary}</p>
+                <div class='trail-img'>
+                    <img src="https://maps.googleapis.com/maps/api/staticmap?markers=label:B|${trailsJson.trails[i].latitude},${trailsJson.trails[i].longitude}&markers=label:A|${mapsJson.results[0].geometry.location.lat},${mapsJson.results[0].geometry.location.lng}&size=700x300&key=AIzaSyB4NifjFp63z2lo8oXCaggg5Yrme4z5b_A" class='map-size'>
+                </div>
                 </li>
             </div>`
         )
@@ -55,7 +65,7 @@ function getTrails(mapsJson) {
                 return response.json();
             }
             throw new Error(response.statusText);
-        }).then(trailsJson=>displayResults(trailsJson))
+        }).then(trailsJson=>displayResults(trailsJson, mapsJson))
         .catch(err => {
             $("#js-error-message").text(`Something failed: ${err.message}`);
         });

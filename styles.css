@@ -67,10 +67,10 @@ label {
 }
 
 .result-page {
-    width: 75%;
+    width: 90%;
     padding: 40px;
     margin: 20px;
-    background: rgba(255, 255, 255, 0.7)
+    background: rgba(255, 255, 255, 0.8)
 }
 
 h3, p {
@@ -84,6 +84,14 @@ h3, p {
 .trail-img {
     display: flex;
     flex-direction:column;
+    justify-content: center;
+    align-items: center;
+    flex: 1 1;
+}
+
+.trail-detail {
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     flex: 1 1;
@@ -169,10 +177,10 @@ input[type='submit'] {
     }
     
     .result-page {
-        width: 75%;
+        width: 90%;
         padding: 40px;
         margin: 20px;
-        background: rgba(255, 255, 255, 0.7)
+        background: rgba(255, 255, 255, 0.8)
     }
 
     h3, p {
@@ -186,6 +194,14 @@ input[type='submit'] {
     .trail-img {
         display: flex;
         flex-direction:column;
+        justify-content: center;
+        align-items: center;
+        flex: 1 1;
+    }
+
+    .trail-detail {
+        display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
         flex: 1 1;
@@ -240,10 +256,10 @@ input[type='submit'] {
     }
     
     .result-page {
-        width: 75%;
+        width: 90%;
         padding: 40px;
         margin: 20px;
-        background: rgba(255, 255, 255, 0.7)
+        background: rgba(255, 255, 255, 0.8)
     }
 
     h3, p {
@@ -260,5 +276,14 @@ input[type='submit'] {
         justify-content: center;
         align-items: center;
         flex: 1 1;
+    }
+  
+    .trail-detail {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        flex: 1 1;
+        margin-bottom: 20px;
     }
 }
