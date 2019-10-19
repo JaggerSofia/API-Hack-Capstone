@@ -262,6 +262,4 @@ input[type='submit'] {
         align-items: center;
         flex: 1 1;
     }
-    li {
-        list-style: none;
 }
