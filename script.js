@@ -29,24 +29,13 @@ function displayResults(trailsJson, mapsJson) {
 
             <img src="https://maps.googleapis.com/maps/api/staticmap?markers=${trailsJson.trails[i].latitude},${trailsJson.trails[i].longitude}|${mapsJson.results[0].geometry.location.lat},${mapsJson.results[0].geometry.location.lng}&size=700x300&key=AIzaSyB4NifjFp63z2lo8oXCaggg5Yrme4z5b_A">
 
-            <div class="navi-details">
-
-            </div>
-            
             </li>
             `
         )
     }
     $("#results").removeClass("hidden");
 
-
 }
-
-function getDistance(mapsJson) {
-    console.log("getDistance", mapsJson);
-
-}
-
 
 
 
@@ -78,8 +67,6 @@ function getTrails(mapsJson) {
         .catch(err => {
             $("#js-error-message").text(`Something failed: ${err.message}`);
         });
-
-    getDistance(mapsJson);
 }
 
 
