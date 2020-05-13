@@ -1,5 +1,7 @@
 This app is called Trail Finder
 
+By  [Victoria Moore](https://github.com/JaggerSofia), [Sejin Hwang](https://github.com/seejins)
+
 https://jaggersofia.github.io/Trail-Finder/
 
 <img src='images/main-screen.png' alt='main screen'>
